@@ -81,6 +81,7 @@ body.np .nav{position:sticky !important;transform:none !important;max-height:non
 body.np .nav .intro,body.np .nav .hideb{display:none}
 body.np main{padding-top:12px !important}
 [hidden]{display:none !important}
+.hit.w::after{background:#9BDDB9 !important;opacity:.9 !important;height:2px !important;left:10% !important;right:10% !important}
 </style></head>
 <body class="np">
 <nav class="nav" aria-label="Navigation">
@@ -234,7 +235,7 @@ function topSelect(n,code){
 function navFor(n){
   var pv=(n>LO&&n<=HI)?n-1:null,nx=(n>=LO&&n<HI)?n+1:null;
   setLink(prv,pv,'← Page %');setLink(nxt,nx,'Page % →');
-  pn.textContent='Page '+n+' · v3';
+  pn.textContent='Page '+n+' · v4';
 }
 function showPage(n,code){
   stopAll();view='page';page=n;lex.hidden=true;loading.hidden=true;
@@ -271,7 +272,7 @@ function showPage(n,code){
 }
 function showLex(){
   stopAll();view='lex';page=0;setNp(true);pageBox.hidden=true;ph.hidden=true;bar.hidden=true;loading.hidden=true;lex.hidden=false;
-  setLink(prv,null,'');setLink(nxt,null,'');pn.textContent='Lexique · v3';goSur.value='lex';
+  setLink(prv,null,'');setLink(nxt,null,'');pn.textContent='Lexique · v4';goSur.value='lex';
   window.scrollTo(0,0);document.title='Lexique — Hizb Sabbih';
 }
 function route(){
