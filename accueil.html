@@ -86,8 +86,6 @@ body.np main{padding-top:12px !important}
 <nav class="nav" aria-label="Navigation">
  <div class="row"><select id="goSur" aria-label="Choisir une sourate"></select></div>
  <div class="row"><a id="nxt" href="#"></a><span class="pn" id="pn"></span><a id="prv" href="#"></a></div>
- <div class="hint" id="hint"></div>
- <div class="intro"><h1 id="t"></h1><p class="legend" id="lg"></p></div>
  <button type="button" class="hideb" id="hideb">▲ Masquer les commandes</button>
 </nav>
 <button id="mini" type="button" aria-label="Arrêter la lecture"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="6" y="6" width="12" height="12" fill="currentColor"/></svg></button>
@@ -124,7 +122,7 @@ var SURS=[{"n": 1, "name": "Al-Fâtiha", "page": 1, "code": "a"}, {"n": 114, "na
 var $=function(i){return document.getElementById(i);};
 var ICON='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
 var STOPI='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="6" y="6" width="12" height="12" fill="currentColor"/></svg>';
-var goSur=$('goSur'),nxt=$('nxt'),prv=$('prv'),pn=$('pn'),hint=$('hint'),ttl=$('t'),lg=$('lg'),pageBox=$('page'),pimg=$('pimg'),ph=$('ph'),lex=$('lex'),bar=$('bar'),
+var goSur=$('goSur'),nxt=$('nxt'),prv=$('prv'),pn=$('pn'),pageBox=$('page'),pimg=$('pimg'),ph=$('ph'),lex=$('lex'),bar=$('bar'),
  selS=$('selS'),selA=$('selA'),selB=$('selB'),selR=$('selR'),chkB=$('chkB'),goBtn=$('go'),mini=$('mini'),loading=$('loading');
 var PG={},AUD={},SYNC={},CURSUR=[],page=0,view='';
 var AU=new Audio();AU.preload='auto';
@@ -236,8 +234,7 @@ function topSelect(n,code){
 function navFor(n){
   var pv=(n>LO&&n<=HI)?n-1:null,nx=(n>=LO&&n<HI)?n+1:null;
   setLink(prv,pv,'← Page %');setLink(nxt,nx,'Page % →');
-  hint.textContent=pv?'Glisse de droite à gauche pour aller à la page '+pv:'';
-  pn.textContent='Page '+n;
+  pn.textContent='Page '+n+' · v3';
 }
 function showPage(n,code){
   stopAll();view='page';page=n;lex.hidden=true;loading.hidden=true;
@@ -255,8 +252,6 @@ function showPage(n,code){
       b.setAttribute('aria-label',kind==='b'?'Écouter la basmala':kind==='v'?'Écouter un verset':'Écouter un mot');
       pageBox.appendChild(b);
     });
-    ttl.textContent=(n===1)?'Sourate Al-Fâtiha':'Page '+n;
-    lg.textContent='Touche un mot souligné en doré pour l’écouter. Touche le numéro d’un verset pour l’écouter. En bas, choisis la sourate, les versets et le nombre de répétitions, puis appuie sur Lire.';
     var first=(code&&CURSUR.some(function(s){return s[0]===code;}))?code:CURSUR[0][0];
     selS.value=first;fillVerses();setGo('Lire',false);
     window.scrollTo(0,0);
@@ -276,7 +271,7 @@ function showPage(n,code){
 }
 function showLex(){
   stopAll();view='lex';page=0;setNp(true);pageBox.hidden=true;ph.hidden=true;bar.hidden=true;loading.hidden=true;lex.hidden=false;
-  setLink(prv,null,'');setLink(nxt,null,'');pn.textContent='Lexique';hint.textContent='';goSur.value='lex';
+  setLink(prv,null,'');setLink(nxt,null,'');pn.textContent='Lexique · v3';goSur.value='lex';
   window.scrollTo(0,0);document.title='Lexique — Hizb Sabbih';
 }
 function route(){
