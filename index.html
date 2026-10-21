@@ -1,3 +1,13 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hizb Sabbih</title></head><body style="font-family:sans-serif;padding:24px;color:#444"><p>Chargement…</p><script>
-(function(){var ns=[];for(var n=80;n>=1;n--)ns.push(n);Promise.all(ns.map(function(n){return fetch('hizb-v'+n+'.html',{method:'HEAD',cache:'no-store'}).then(function(r){return r.ok?n:0;}).catch(function(){return 0;});})).then(function(r){var best=Math.max.apply(null,r);location.replace(best?('hizb-v'+best+'.html'):'accueil.html');});})();
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hizb Sabbih</title>
+<meta name="theme-color" content="#1D5A44">
+<style>html,body{height:100%;margin:0;background:#0A4B45;color:#fff;font-family:system-ui,-apple-system,sans-serif}body{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px;box-sizing:border-box}a{color:#E9C36A;font-weight:700}p{line-height:1.5;font-size:17px}</style>
+</head><body><p id="m">Chargement de Hizb Sabbih…<br><br><a href="hizb-v68.html">Ouvrir l’application</a></p>
+<script>
+// This page only redirects once it is online (GitHub Pages) ; anywhere else, it just explains what it is.
+(function(){var h=location.hostname;
+ if(/github\.io$/.test(h)||h==='localhost'||h==='127.0.0.1'||location.protocol==='file:'){location.replace('hizb-v68.html'+location.search+location.hash);}
+ else{document.getElementById('m').innerHTML='Ceci est la <b>page d’accueil du site</b> Hizb Sabbih.<br><br>Elle ne s’affiche pas ici : <b>téléchargez ce fichier</b>, puis téléversez-le sur GitHub avec <b>hizb-v68.html</b>.';}
+})();
 </script></body></html>
