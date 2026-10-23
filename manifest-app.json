@@ -1,0 +1,37 @@
+{
+ "name": "Hizb Sabbih",
+ "short_name": "Hizb Sabbih",
+ "description": "Apprendre à lire le Coran mot à mot, avec le son et la bouche du professeur.",
+ "id": "hizb-sabbih",
+ "start_url": "./hizb-v74.html?source=app",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#FFFFFF",
+ "theme_color": "#1F7F25",
+ "lang": "fr",
+ "dir": "ltr",
+ "categories": [
+  "education"
+ ],
+ "icons": [
+  {
+   "src": "logo-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "logo-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "logo-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
