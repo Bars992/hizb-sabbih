@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hizb Sabbih</title>
+<meta name="theme-color" content="#1F7F25">
+<style>html,body{height:100%;margin:0;background:#fff;color:#1F7F25;font-family:system-ui,-apple-system,sans-serif}body{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px;box-sizing:border-box}a{color:#1F7F25;font-weight:700}p{line-height:1.5;font-size:17px}</style>
+</head><body><p id="m">Chargement de Hizb Sabbih…</p>
+<script>
+/* Page de démarrage de l'application : ouvre toujours la version la plus récente du site (hizb-v75.html, hizb-v76.html, …). */
+(function(){
+ var FALLBACK='hizb-v85.html',t=[],i,m=document.getElementById('m');
+ function go(f){location.replace(f+location.search+location.hash);}
+ for(i=160;i>=75;i--)t.push(i);
+ Promise.all(t.map(function(n){return fetch('hizb-v'+n+'.html',{method:'HEAD',cache:'no-store'}).then(function(r){return r.ok?n:0;}).catch(function(){return 0;});})).then(function(a){
+  var best=Math.max.apply(null,a.concat([0]));
+  if(best>0)go('hizb-v'+best+'.html');
+  else if(navigator.onLine===false)m.innerHTML='Pas de connexion internet.<br>Reconnectez-vous puis rouvrez l’application.';
+  else go(FALLBACK);
+ });
+})();
+</script></body></html>
